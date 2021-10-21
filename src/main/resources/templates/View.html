@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show contacts</title>
+</head>
+<body>
+<section>
+		<div class="card mr-3 ml-3">
+			<table class="table">
+			  <thead class="table-head">
+			    <tr>
+			      <th scope="col">Id</th>
+			      <th scope="col">userId</th>
+			      <th scope="col">Email</th>
+			       <th scope="col">Income</th>
+			      <th scope="col">Expense</th>
+			      <th scope="col">Balance</th>
+			      <th scope="col">Description</th>
+			      <th scope="col">Action</th>
+			   
+			    </tr>
+			  </thead>
+			  <tbody>
+			    <tr th:each="c: ${expenses}">
+			      <th scope="row" th:text="${c.id}">id</th>
+			      <th scope="row" th:text="${c.getUser.getId}">userId</th>
+			      <th scope="row" th:text="${c.getUser.getEmail}">user</th>
+			      <th scope="row" th:text="${c.getUser.getIncome}">user</th>
+			      <td th:text="${c.getExpense}">Expense</td>
+			      <td th:text="${c.getBalance}">Balance</td>
+			      <td th:text="${c.getExpenseDesc}">Description</td>
+			      <td>
+			      <a th:href="@{'/delete/'+ ${c.id}}"  class="btn btn-danger btn-sm"> Delete </a>
+			      </td>
+			   
+			    </tr>
+			    
+			  </tbody>
+			</table>
+	</div>
+</section>
+
+</body>
+</html>

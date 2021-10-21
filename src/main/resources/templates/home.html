@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<section class="banner">
+	<div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="form-container">
+                    <h3 class="title">Add Expense</h3>
+                    <form class="form-horizontal" th:action="@{/home}" method="post" th:object="${expenses}">
+                     	<div class="form-group">
+					      <label class="control-label" for="email"> Expense </label> 
+					      <input id="expense" class="form-control" placeholder="Expense Amount" th:field="*{expense}" required
+					       autofocus="autofocus" />
+						</div>
+						
+						<div class="form-group">
+					      <label class="control-label" for="email"> Description </label> 
+					      <input id="expenseDesc" class="form-control" placeholder="Expense description" th:field="*{expenseDesc}" required
+					       autofocus="autofocus" />
+						</div>
+                        
+                        <div class="form-group">
+							<button type="submit" class="btn btn-default">Add</button>
+						</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+	<section>
+</body>
+</html>
